@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acelerômetro</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+
+	<meta http-equiv="cleartype" content="on">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div id="alert"></div>
+	<div id="ball"></div>
+
+	<script type="text/javascript" src="scripts/accelerometer.js"></script>
+	<script type="text/javascript" src="scripts/tabletlab.js"></script>
+	<script type="text/javascript">
+		if (TL.sysInfo().appleDevice) {
+			accelerometer.initialize();
+		} else {
+			var ball = document.getElementById('ball');
+			var alert = document.getElementById('alert');
+
+			ball.style.display = 'none';
+			alert.innerHTML = 'Este recurso não está disponível para esta plataforma em tablets Android.';
+			alert.style.display = 'block';
+		}
+	</script>
+
+</body>
+</html>
